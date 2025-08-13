@@ -1,0 +1,17 @@
+{
+  "name": "eks-image-processor",
+  "version": "1.0.0",
+  "description": "EKS image processing service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.0.0",
+    "@aws-sdk/client-sqs": "^3.0.0",
+    "sharp": "^0.32.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

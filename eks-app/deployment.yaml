@@ -1,0 +1,50 @@
+# eks-app/deployment.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: image-processor-sa
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::<YOUR_ACCOUNT_ID>:role/dev-image-processor-service-account-role
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-processor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-processor
+  template:
+    metadata:
+      labels:
+        app: image-processor
+    spec:
+      serviceAccountName: image-processor-sa
+      containers:
+      - name: processor
+        image: <YOUR_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/dev-image-processor:latest
+        env:
+        - name: SQS_QUEUE_URL
+          value: "https://sqs.us-east-1.amazonaws.com/<YOUR_ACCOUNT_ID>/dev-image-processing-queue"
+        - name: AWS_REGION  
+          value: "us-east-1"
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-processor
+spec:
+  selector:
+    app: image-processor
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
